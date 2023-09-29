@@ -8,6 +8,7 @@
   
   iehfc_server <- function(input, output, session) {
       
+      options(shiny.maxRequestSize = 1000 * 1024^2) # Set maximum upload size to 1 gigabytes
       source("iehfc_app/server_scripts/duplicates.R", local = TRUE)
       source("iehfc_app/server_scripts/outliers.R",   local = TRUE)
       source("iehfc_app/server_scripts/enumerator.R", local = TRUE)
